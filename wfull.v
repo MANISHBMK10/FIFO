@@ -1,4 +1,4 @@
-module wptr_full #(parameter ADDRSIZE = 4)
+module wptr_full #(parameter ADDRSIZE = 2)
    (output reg wfull,
     output [ADDRSIZE-1:0] waddr,
     output reg [ADDRSIZE :0] wptr,

@@ -122,23 +122,27 @@ module memory_loader_tb;
 
 
     end
-   always@(uut.Feature_Memory[31])
-    # 1500
-    begin 
-     $display(" Matrix Multiplication Output fetched from Feature Memory = \n %d  %d  %d  %d \n %d  %d  %d  %d \n %d  %d  %d  %d \n %d  %d  %d  %d \n  ",  uut.Feature_Memory[16],uut.Feature_Memory[17],uut.Feature_Memory[18],uut.Feature_Memory[19],uut.Feature_Memory[20],uut.Feature_Memory[21],uut.Feature_Memory[22],uut.Feature_Memory[23],uut.Feature_Memory[24], uut.Feature_Memory[25],uut.Feature_Memory[26],uut.Feature_Memory[27],uut.Feature_Memory[28],uut.Feature_Memory[29],uut.Feature_Memory[30],uut.Feature_Memory[31] );
-    end
-    always@(*) begin
+   always@(*) begin
        $monitor("Time: %t, startSignal:%d \n ", $time,startSignal);
     end 
 
-endmodule
+initial
+begin 
+    #100000 $finish;
+end
    
 
-    /*always@(uut.Feature_Memory[31])
-    # 1500
+  //  always@(uut.Feature_Memory[31])
+  //  # 1500
+  initial 
+  #100000
     begin 
      $display(" Matrix Multiplication Output fetched from Feature Memory = \n %d  %d  %d  %d \n %d  %d  %d  %d \n %d  %d  %d  %d \n %d  %d  %d  %d \n  ",  uut.Feature_Memory[16],uut.Feature_Memory[17],uut.Feature_Memory[18],uut.Feature_Memory[19],uut.Feature_Memory[20],uut.Feature_Memory[21],uut.Feature_Memory[22],uut.Feature_Memory[23],uut.Feature_Memory[24], uut.Feature_Memory[25],uut.Feature_Memory[26],uut.Feature_Memory[27],uut.Feature_Memory[28],uut.Feature_Memory[29],uut.Feature_Memory[30],uut.Feature_Memory[31] );
-    end*/
+    end
+
+
+
+endmodule
 
 
 

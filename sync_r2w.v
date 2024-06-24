@@ -1,4 +1,4 @@
-module sync_r2w #(parameter ADDRSIZE = 4)
+module sync_r2w #(parameter ADDRSIZE = 2)
     (output reg [ADDRSIZE:0] wq2_rptr,
      input [ADDRSIZE:0] rptr,
      input wclk, wrst_n);
