@@ -1,12 +1,28 @@
 # FIFO
  FIFO implementation on TPU
-# command
+# Commands
+To run the FIFO implementation on TPU use the command <br />
 iverilog -o b.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br />
 vvp b.out
-# asynchronous fifo modules(Cummings)
+## Asynchronous fifo modules(From Cummings paper)
 top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
 To run use the command - <br />
 iverilog -o a.out tb_fifo.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
 vvp a.out<br />
-# TPU modules
+## TPU modules
 FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v
+# References
+[http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](url)
+## Let's get Started -
+### What is a TPU? -
+TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
+# Image of TPU-
+Multiply and Accumulate(MAC) units are the base of Systolic Array. I've implemented 16 MAC units to form a Systolic array i.e 4*4 matrices mutliplication. 
+>".v" file stands for verilog files
+
+The input values gets loaded into Feature Memory and Weight Memory. <br/>
+These 8-bit values are loaded from Weight Memory and Feature Memory into cloumn-wise Asynchronous FIFOs as Memory clock domain is different from systolic array clock domain. <br/>
+FIFOs are responsible to load the data into systolic array. <br/>
+As values get multiplied and passed down to other MAC units, they are passed through Quantization unit(i.e. which converts 24-bit values to 8-bit values).<br/>
+After Quantization, the values are gone through Activation unit(i.e. the output value is checked if it's greater than 10).
+Now, the vakues are updated into Asynchronous FIFOs and gets updated back into Feature Memory.
