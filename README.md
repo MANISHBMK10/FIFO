@@ -25,5 +25,5 @@ The input values gets loaded into Feature Memory and Weight Memory. <br/>
 These 8-bit values are loaded from Weight Memory and Feature Memory into cloumn-wise Asynchronous FIFOs as Memory clock domain is different from systolic array clock domain. <br/>
 FIFOs are responsible to load the data into systolic array. <br/>
 As values get multiplied and passed down to other MAC units, they are passed through Quantization unit(i.e. which converts 24-bit values to 8-bit values).<br/>
-After Quantization, the values are gone through Activation unit(i.e. the output value is checked if it's greater than 10).
+After Quantization, the values are gone through Activation unit(i.e. the output value is checked if it's greater than threshold value).
 Now, the vakues are updated into Asynchronous FIFOs and gets updated back into Feature Memory.
