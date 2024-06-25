@@ -1,7 +1,7 @@
 # FIFO
  FIFO implementation on TPU
  # Simulation
- To Simulate the following files, I've used Icarus Verilog.
+ To Simulate the following files, I've used Icarus Verilog.<br/>
  After installation, please save the files in the bin and use the commands below. 
 # Commands
 To run the FIFO implementation on TPU use the command <br />
