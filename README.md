@@ -24,7 +24,7 @@ TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU.
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU.png)
 **Multiply and Accumulate(MAC) units are the base of Systolic Array. I've implemented 16 MAC units to form a Systolic array i.e 4*4 matrices mutliplication.<br/> 
 The input values gets loaded into Feature Memory and Weight Memory. <br/>
-These 8-bit values are loaded from Weight Memory and Feature Memory into cloumn-wise Asynchronous FIFOs as Memory clock domain is different from systolic array clock domain. <br/>
+These 8-bit values are loaded  into cloumn-wise Asynchronous FIFOs from Weight Memory and Feature Memory as Memory clock domain is different from systolic array clock domain. <br/>
 FIFOs are responsible to load the data into systolic array. <br/>
 As values get multiplied and passed down to other MAC units, they are passed through Quantization unit(i.e. which converts 24-bit values to 8-bit values).<br/>
 After Quantization, the values are gone through Activation unit(i.e. the output value is checked if it's greater than threshold value).<br/>
