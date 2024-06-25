@@ -17,7 +17,7 @@ FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v
 ### What is a TPU? -
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
 # Image of TPU-
-![]()
+![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU.png)
 Multiply and Accumulate(MAC) units are the base of Systolic Array. I've implemented 16 MAC units to form a Systolic array i.e 4*4 matrices mutliplication. 
 >".v" file stands for verilog files
 
