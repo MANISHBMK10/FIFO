@@ -1,4 +1,4 @@
-# FIFO
+# FIFO on TPU
  Asynchronous FIFO implementation on TPU
  # Simulation
  To Simulate the following files, I've used Icarus Verilog.<br/>
@@ -18,6 +18,8 @@ vvp a.out<br />
 **modules** - FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v
 
 ## Let's get Started -
+### FIFO - # FIFO
+ FIFO stands for First_in, First_out Buffer
 ### What is a TPU? -
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
 ### Image of TPU-
