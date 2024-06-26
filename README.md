@@ -18,7 +18,7 @@ vvp a.out<br />
 **modules** - FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v
 
 ## Let's get Started -
-### FIFO - # FIFO
+### FIFO -
  FIFO stands for First_in, First_out Buffer
 ### What is a TPU? -
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
