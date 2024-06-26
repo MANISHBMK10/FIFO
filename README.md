@@ -1,5 +1,5 @@
 # FIFO
- FIFO implementation on TPU
+ Asynchronous FIFO implementation on TPU
  # Simulation
  To Simulate the following files, I've used Icarus Verilog.<br/>
  After installation, please save the files in the bin and use the commands below. 
@@ -10,7 +10,7 @@ vvp b.out
 >".v" file stands for verilog files
 
 ## Asynchronous fifo modules(From Cummings paper)
-top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
+**modules** - top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
 To run use the command - <br />
 iverilog -o a.out tb_fifo.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
 vvp a.out<br />
