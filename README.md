@@ -111,7 +111,7 @@ Time: 360 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 1 | rinc: 0 | wdat
 Time: 365 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 1 | rinc: 0 | wdata: 77 | rdata: c3 | wfull: 0 | rempty: 0 <br/>
 Time: 370 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 1 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 0 | rempty: 0 <br/>
 Time: 375 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 1 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Attempted to write to full FIFO at time 380
+Attempted to write to full FIFO at time 380 <br/>
 Time: 380 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
 Time: 385 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
 Time: 390 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
@@ -186,12 +186,12 @@ Time: 730 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdat
 Time: 735 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
 Time: 740 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
 Time: 745 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Attempted to read from empty FIFO at time 750
-Attempted to read from empty FIFO at time 750
-Attempted to read from empty FIFO at time 750
-Attempted to read from empty FIFO at time 750
-Attempted to read from empty FIFO at time 750
-Attempted to read from empty FIFO at time 750
+Attempted to read from empty FIFO at time 750<br/>
+Attempted to read from empty FIFO at time 750<br/>
+Attempted to read from empty FIFO at time 750<br/>
+Attempted to read from empty FIFO at time 750<br/>
+Attempted to read from empty FIFO at time 750<br/>
+Attempted to read from empty FIFO at time 750<br/>
 Time: 750 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
 Time: 755 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
 Time: 760 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
