@@ -32,9 +32,9 @@ As values get multiplied and passed down to other MAC units, they are passed thr
 After Quantization, the values are gone through Activation unit(i.e. the output value is checked if it's greater than threshold value).<br/>
 Now, the vakues are updated into Asynchronous FIFOs and gets updated back into Feature Memory.<br/>**
 # Simulation Results
-Asynchronous FIFO Testbench results -<br/>
-C:\iverilog\bin>iverilog -o a tb_fifo.v top_fifo.v sync_w2r.v sync_r2w.v rempty.v wfull.v fifo_mem.v<br/>
-C:\iverilog\bin>vvp a<br/>
+## Asynchronous FIFO Testbench results -<br/>
+### C:\iverilog\bin>iverilog -o a tb_fifo.v top_fifo.v sync_w2r.v sync_r2w.v rempty.v wfull.v fifo_mem.v<br/>
+### C:\iverilog\bin>vvp a<br/>
 Time: 0 | wclk: 0 | rclk: 0 | wrst_n: 0 | rrst_n: 0 | winc: 0 | rinc: 0 | wdata: 00 | rdata: xx | wfull: 0 | rempty: 1 <br/>
 Time: 5 | wclk: 1 | rclk: 0 | wrst_n: 0 | rrst_n: 0 | winc: 0 | rinc: 0 | wdata: 00 | rdata: xx | wfull: 0 | rempty: 1 <br/>
 Time: 10 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 00 | rdata: xx | wfull: 0 | rempty: 1 <br/>
