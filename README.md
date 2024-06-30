@@ -29,7 +29,7 @@ vvp a.out<br />
 ### What is a TPU? -
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
 ### Image of TPU-
-![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU.png)
+![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU_C.png)
 **Multiply and Accumulate(MAC)** units are the base of Systolic Array. I've implemented 16 MAC units to form a Systolic array i.e 4*4 matrices mutliplication.<br/> 
 The input values gets loaded into Feature Memory and Weight Memory. <br/>
 ### Image of MAC -
