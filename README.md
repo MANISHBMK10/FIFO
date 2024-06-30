@@ -24,15 +24,15 @@ vvp a.out<br />
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
 ### Image of TPU-
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU.png)
-**Multiply and Accumulate(MAC) units are the base of Systolic Array. I've implemented 16 MAC units to form a Systolic array i.e 4*4 matrices mutliplication.<br/> 
-The input values gets loaded into Feature Memory and Weight Memory. <br/>**
+**Multiply and Accumulate(MAC)** units are the base of Systolic Array. I've implemented 16 MAC units to form a Systolic array i.e 4*4 matrices mutliplication.<br/> 
+The input values gets loaded into Feature Memory and Weight Memory. <br/>
 ### Image of MAC -
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/MAC.png)
-**These 8-bit values are loaded  into cloumn-wise Asynchronous FIFOs from Weight Memory and Feature Memory as Memory clock domain is different from systolic array clock domain. <br/>
+These 8-bit values are loaded  into cloumn-wise Asynchronous FIFOs from Weight Memory and Feature Memory as Memory clock domain is different from systolic array clock domain. <br/>
 FIFOs are responsible to load the data into systolic array. <br/>
 As values get multiplied and passed down to other MAC units, they are passed through Quantization unit(i.e. which converts 24-bit values to 8-bit values).<br/>
 After Quantization, the values are gone through Activation unit(i.e. the output value is checked if it's greater than threshold value).<br/>
-Now, the vakues are updated into Asynchronous FIFOs and gets updated back into Feature Memory.<br/>**
+Now, the values are updated into Asynchronous FIFOs and gets updated back into Feature Memory.<br/>
 # Simulation Results
 ## Asynchronous FIFO Testbench results -<br/>
 ### C:\iverilog\bin>iverilog -o a tb_fifo.v top_fifo.v sync_w2r.v sync_r2w.v rempty.v wfull.v fifo_mem.v<br/>
@@ -116,77 +116,6 @@ Time: 375 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 1 | rinc: 0 | wdat
 Attempted to write to full FIFO at time 380 <br/>
 Time: 380 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
 Time: 385 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 390 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 395 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 400 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 405 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 410 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 415 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 420 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 425 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: c3 | wfull: 1 | rempty: 0 <br/>
-Time: 430 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 12 | wfull: 1 | rempty: 0 <br/>
-Time: 435 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 12 | wfull: 1 | rempty: 0 <br/>
-Time: 440 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 12 | wfull: 1 | rempty: 0 <br/>
-Time: 445 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 12 | wfull: 1 | rempty: 0 <br/>
-Time: 450 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 34 | wfull: 1 | rempty: 0 <br/>
-Time: 455 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 34 | wfull: 1 | rempty: 0 <br/>
-Time: 460 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 34 | wfull: 1 | rempty: 0 <br/>
-Time: 465 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 34 | wfull: 1 | rempty: 0 <br/>
-Time: 470 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 56 | wfull: 1 | rempty: 0 <br/>
-Time: 475 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 56 | wfull: 0 | rempty: 0 <br/>
-Time: 480 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 56 | wfull: 0 | rempty: 0 <br/>
-Time: 485 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 56 | wfull: 0 | rempty: 0 <br/>
-Time: 490 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 78 | wfull: 0 | rempty: 0 <br/>
-Time: 495 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 78 | wfull: 0 | rempty: 0 <br/>
-Time: 500 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 78 | wfull: 0 | rempty: 0 <br/>
-Time: 505 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 78 | wfull: 0 | rempty: 0 <br/>
-Time: 510 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 9a | wfull: 0 | rempty: 0 <br/>
-Time: 515 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 9a | wfull: 0 | rempty: 0 <br/>
-Time: 520 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 9a | wfull: 0 | rempty: 0 <br/>
-Time: 525 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 9a | wfull: 0 | rempty: 0 <br/>
-Time: 530 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: bc | wfull: 0 | rempty: 0 <br/>
-Time: 535 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: bc | wfull: 0 | rempty: 0 <br/>
-Time: 540 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: bc | wfull: 0 | rempty: 0 <br/>
-Time: 545 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: bc | wfull: 0 | rempty: 0 <br/>
-Time: 550 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: de | wfull: 0 | rempty: 0 <br/>
-Time: 555 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: de | wfull: 0 | rempty: 0 <br/>
-Time: 560 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: de | wfull: 0 | rempty: 0 <br/>
-Time: 565 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: de | wfull: 0 | rempty: 0 <br/>
-Time: 570 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: f0 | wfull: 0 | rempty: 0 <br/>
-Time: 575 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: f0 | wfull: 0 | rempty: 0 <br/>
-Time: 580 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: f0 | wfull: 0 | rempty: 0 <br/>
-Time: 585 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: f0 | wfull: 0 | rempty: 0 <br/>
-Time: 590 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 11 | wfull: 0 | rempty: 0 <br/>
-Time: 595 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 11 | wfull: 0 | rempty: 0 <br/>
-Time: 600 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 11 | wfull: 0 | rempty: 0 <br/>
-Time: 605 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 11 | wfull: 0 | rempty: 0 <br/>
-Time: 610 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 22 | wfull: 0 | rempty: 0 <br/>
-Time: 615 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 22 | wfull: 0 | rempty: 0 <br/>
-Time: 620 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 22 | wfull: 0 | rempty: 0 <br/>
-Time: 625 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 22 | wfull: 0 | rempty: 0 <br/>
-Time: 630 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 33 | wfull: 0 | rempty: 0 <br/>
-Time: 635 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 33 | wfull: 0 | rempty: 0 <br/>
-Time: 640 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 33 | wfull: 0 | rempty: 0 <br/>
-Time: 645 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 33 | wfull: 0 | rempty: 0 <br/>
-Time: 650 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 44 | wfull: 0 | rempty: 0 <br/>
-Time: 655 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 44 | wfull: 0 | rempty: 0 <br/>
-Time: 660 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 44 | wfull: 0 | rempty: 0 <br/>
-Time: 665 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 44 | wfull: 0 | rempty: 0 <br/>
-Time: 670 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 55 | wfull: 0 | rempty: 0 <br/>
-Time: 675 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 55 | wfull: 0 | rempty: 0 <br/>
-Time: 680 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 55 | wfull: 0 | rempty: 0 <br/>
-Time: 685 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 55 | wfull: 0 | rempty: 0 <br/>
-Time: 690 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 66 | wfull: 0 | rempty: 0 <br/>
-Time: 695 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 66 | wfull: 0 | rempty: 0 <br/>
-Time: 700 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 66 | wfull: 0 | rempty: 0 <br/>
-Time: 705 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 66 | wfull: 0 | rempty: 0 <br/>
-Time: 710 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 77 | wfull: 0 | rempty: 0 <br/>
-Time: 715 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 77 | wfull: 0 | rempty: 0 <br/>
-Time: 720 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 77 | wfull: 0 | rempty: 0 <br/>
-Time: 725 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 77 | wfull: 0 | rempty: 0 <br/>
-Time: 730 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 735 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 740 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
 Time: 745 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 1 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
 Attempted to read from empty FIFO at time 750<br/>
 Attempted to read from empty FIFO at time 750<br/>
@@ -196,24 +125,7 @@ Attempted to read from empty FIFO at time 750<br/>
 Attempted to read from empty FIFO at time 750<br/>
 Time: 750 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
 Time: 755 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 760 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 765 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 770 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 775 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 780 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 785 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 790 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 795 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 800 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 805 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 810 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 815 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 820 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 825 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 830 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 835 | wclk: 1 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 840 | wclk: 0 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 845 | wclk: 1 | rclk: 0 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
-Time: 850 | wclk: 0 | rclk: 1 | wrst_n: 1 | rrst_n: 1 | winc: 0 | rinc: 0 | wdata: 88 | rdata: 88 | wfull: 0 | rempty: 1 <br/>
+
+
 # References
 [http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](url)
