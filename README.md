@@ -11,12 +11,12 @@ vvp b.out
 
 ## Asynchronous fifo modules(From Cummings paper)
 **modules** - top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
-top_fifo.v - This module instantiates all the other modules of FIFOs.
-sync_r2w.v - This module synchronzies read pointer to write pointer.
-sync_w2r.v - This module synchronzies write pointer to reat pointer.
-rempty.v   - This module checks empty condition.
-fifo_mem.v - This module uses memory for storing values for FIFOs.
-wfull.v    - This module checks full condition.
+top_fifo.v - This module instantiates all the other modules of FIFOs. <br />
+sync_r2w.v - This module synchronzies read pointer to write pointer. <br />
+sync_w2r.v - This module synchronzies write pointer to reat pointer. <br />
+rempty.v   - This module checks empty condition. <br />
+fifo_mem.v - This module uses memory for storing values for FIFOs. <br />
+wfull.v    - This module checks full condition. <br />
 To run use the command - <br />
 iverilog -o a.out tb_fifo.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
 vvp a.out<br />
