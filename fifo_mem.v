@@ -17,6 +17,5 @@ module fifomem #(parameter DATASIZE = 8, // Memory data word width
 
      always @(posedge rclk)
      if(rclken && !rempty)
-       rdata <= mem[raddr]; 
- 
+       rdata <= mem[raddr];
 endmodule
