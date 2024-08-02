@@ -88,7 +88,7 @@ initial begin
     // Display output
     $display("Output Memory:");
     for ( i = 0; i < 16; i = i + 1) begin
-        $display("[%0d] = %d fifo_empty= %d j = %d read_sync_cntr = %d \t ", i, uut.Weight_Memory[i], uut.fifo_empty, uut.j,  uut.read_sync_cntr);
+        $display("[%0d] = %d \t ", i, uut.Weight_Memory[i]);
     end
     $display("Input Memory:");
     for ( j = 0; j < 16; j = j + 1) begin
