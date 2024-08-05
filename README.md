@@ -2,19 +2,17 @@
  Asynchronous FIFO implementation on TPU
  # Simulation
  To Simulate the following files, I've used Icarus Verilog.<br/>
- Here's the link for Installation [Icarus Verilog] (https://bleyer.org/icarus/)
+ Here's the link for Installation [Icarus Verilog] (https://bleyer.org/icarus/).
  After installation, please save the files in the bin and use the commands below. 
 # Commands
 To run FIFO implementation on TPU, use the following command - <br />
 
 1st Command - iverilog -o b.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br />
-
 2nd Command - vvp b.out <br/>
 
 To test Asynchronous FIFO files, use the command below - <br />
 
 1st Command - iverilog -o a.out tb_fifo.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
-
 2nd Command - vvp a.out<br />
 
 >".v" file stands for verilog files<br/>
