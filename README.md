@@ -31,7 +31,10 @@ To test Asynchronous FIFO files, use the command below - <br />
 ## Let's get Started -
 
 ### FIFO -
- FIFO stands for First_in, First_out Buffer
+ FIFO stands for First_in, First_out Buffer. There are two types of FIFO's. 
+ Synchronous FIFO - This FIFO works in one clock domain.
+ Asynchronous FIFO - This FIFO works with two seperate clock domains.
+ In this Project, I'd gone with Asynchronous FIFO as it's common in real world.
 ### What is a TPU? -
 
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
