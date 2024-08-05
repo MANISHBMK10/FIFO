@@ -16,7 +16,7 @@ To test Asynchronous FIFO files, use the command below - <br />
 2nd Command - vvp a.out<br />
 
 >".v" file stands for verilog files<br/>
-## Asynchronous fifo modules(From Cummings paper)
+## Asynchronous FIFO modules(From Cummings paper)
 **modules** - top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
 
 - **top_fifo.v** - This module instantiates all the other modules of FIFOs. <br />
@@ -56,7 +56,7 @@ Finally, the values are updated in asynchronous FIFOs and written back into the 
 # Simulation Results
 ## Asynchronous FIFO Testbench results -<br/>
 
-To test the working of FIFO, I've used two memories with different clock domain and values are passed down from one memory to other using FIFO.
+To test the working of FIFO, I've used two memories with different clock domains and values are passed down from one memory to other using FIFO.
 
 C:\iverilog\bin>iverilog -o a test_memfifo_tb.v test_memfifo.v wfull.v rempty.v sync_r2w.v sync_w2r.v top_fifo.v fifo_mem.v<br/>
 
