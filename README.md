@@ -12,7 +12,7 @@ To run FIFO implementation on TPU, use the following command - <br />
 
 To test Asynchronous FIFO files, use the command below - <br />
 
-1st Command - iverilog -o a.out tb_fifo.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
+1st Command - iverilog -o a top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v <br />
 2nd Command - vvp a.out<br />
 
 >".v" file stands for verilog files<br/>
