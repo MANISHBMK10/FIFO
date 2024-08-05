@@ -2,7 +2,7 @@
  Asynchronous FIFO implementation on TPU
  # Simulation Tool
  To Simulate the following files, I've used Icarus Verilog and GtkWave.<br/>
- Here's the link for Installation (https://bleyer.org/icarus/) <br/>
+ Here's the link for Installation - [Icarus Verilog](https://bleyer.org/icarus/) <br/>
  After installation, please save the files in the bin and use the commands below. 
 # Commands
 To run FIFO implementation on TPU, use the following command - <br />
