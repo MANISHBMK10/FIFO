@@ -68,12 +68,12 @@ C:\iverilog\bin>vvp a<br/>
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/gtk_fifofinal.png)
 
 ## FIFO Implementation on TPU Results
-Simulation command #1 - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v
-           command #2 - vvp result.out
+Simulation command #1 - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br/>
+           command #2 - vvp result.out<br/>
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/fifo_tpu.png)
 ### GTKWave Results -
 
-![]()
+![](https://github.com/MANISHBMK10/FIFO/blob/main/tpu_gtk.png)
 
 # References
 
