@@ -73,7 +73,7 @@ Simulation command #1 - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolic
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/fifo_tpu.png)
 ### GTKWave Results -
 
-![](https://github.com/MANISHBMK10/FIFO/blob/main/gtktpu.png)
+![]()
 
 # References
 
