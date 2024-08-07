@@ -79,7 +79,7 @@ C:\iverilog\bin>vvp a<br/>
 **command #2** - vvp result.out<br/>
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/fifo_tpu.png)
-
+> The last column values are lower than threshold value when passed through activation unit.<br/>
 #### GTKWave Results -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/tpu_gtk.png)
