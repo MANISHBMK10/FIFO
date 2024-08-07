@@ -1,5 +1,5 @@
 # FIFO on TPU
- Asynchronous FIFO implementation on TPU
+ Asynchronous FIFO implementation on toy version of TPU.
  ## Simulation Tool
  To Simulate the following files, I've used Icarus Verilog and GtkWave.<br/>
  Here's the link for Installation - [Icarus Verilog](https://bleyer.org/icarus/) <br/>
