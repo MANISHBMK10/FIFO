@@ -72,7 +72,7 @@ C:\iverilog\bin>vvp a<br/>
 #### GTKWave Results -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/gtk_fifofinal.png)
-> The values are in Hexadecimal<br/>
+> The values are in Hexadecimal data format.<br/>
 
 ### FIFO Implementation on TPU Results
 **Simulation command #1** - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br/>
@@ -84,7 +84,7 @@ C:\iverilog\bin>vvp a<br/>
 #### GTKWave Results -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/tpu_gtk.png)
-> The values are in Hexadecimal<br/>
+> The values are in Hexadecimal data format.<br/>
 ## References
 
 [http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](url)
