@@ -61,7 +61,7 @@ always @(posedge clk2) begin
           if(read_sync_cntr > 2)begin 
             Weight_Memory[j] <= fifo_data_out;
             j <= j + 1;
-            if (j == 16) fifo_empty_flag =0; 
+            if (j == 15) fifo_empty_flag = 0; 
           end
           rinc <= 1;
     end else begin
@@ -76,9 +76,8 @@ fifo_empty_flag = 1;
 end
 
 
-// Output Weight_Memory content sequentially
 always @(posedge clk2) begin
-    if (rst3) begin
+    if (fifo_empty_flag) begin
         k <= 0;
     end else if (k < 16) begin
         port_D <= Weight_Memory[k];
@@ -87,4 +86,5 @@ always @(posedge clk2) begin
 end
 
 endmodule
+
 

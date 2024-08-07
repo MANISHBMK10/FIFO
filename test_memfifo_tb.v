@@ -49,7 +49,7 @@ initial begin
     rst = 0; // Release reset
     rst1 =1;
     rst2 =1;
-   // rst3 =0;
+    //rst3 =0;
 
     // Writing to Feature Memory
     #10 W_en = 1; port_A = 8'd4;
@@ -98,7 +98,7 @@ initial begin
 end
 
 initial begin
-    #1500 $finish; // Finish simulation after sufficient time
+    #2000 $finish; // Finish simulation after sufficient time
     
 end
 
