@@ -37,27 +37,28 @@ To test Asynchronous FIFO files, use the command below - <br />
 ### Let's get Started -
 
 #### FIFO -
- FIFO stands for First_in, First_out Buffer. There are two types of FIFO's. 
- Synchronous FIFO - This FIFO works in one clock domain.
- Asynchronous FIFO - This FIFO works with two seperate clock domains.
- In this Project, I'd gone with Asynchronous FIFO as it's common in real world.
+ FIFO stands for First_in, First_out Buffer. There are two types of FIFO's. <br/>
+ Synchronous FIFO - This FIFO works in one clock domain.<br/>
+ Asynchronous FIFO - This FIFO works with two seperate clock domains.<br/>
+ In this Project, I'd gone with Asynchronous FIFO as it's common in real world.<br/>
 #### What is a TPU? -
 
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
 #### Image of TPU-
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU_C.png)
-**Multiply and Accumulate(MAC)** units are the base of systolic array. I've implemented 16 MAC units to form a systolic array i.e 4*4 matrices mutliplication.<br/> 
+**Multiply and Accumulate(MAC)** units are the base of systolic array. I've implemented 16 MAC units to form a systolic array for 4*4 matrix mutliplication.<br/> 
 The input values gets loaded into feature memory and weight memory. <br/>
 ### Image of MAC -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/MAC.png)
 The 8-bit values are loaded into column-wise asynchronous FIFOs from the weight memory and feature memory, as the memory clock domain differs from the systolic array clock domain. FIFOs are responsible for loading data into the systolic array.
 
-As the values are multiplied within the MAC units, they are then passed down to other MAC units. The Carryin values are 24-bit. After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values. Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.
+As the values are loaded and multiplied within the MAC units, they are then passed down to other MAC units. The Carryin values are 24-bits for Top MACUnits. <br/>
+After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values. <br/>
+Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.<br/>
+Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.<br/>
 
-Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.
-<br/>
 ## Simulation Results
 ### Asynchronous FIFO Testbench results -<br/>
 
