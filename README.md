@@ -28,6 +28,11 @@ To test Asynchronous FIFO files, use the command below - <br />
 
 ## TPU modules
 **modules** - FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v
+- **FIFO_TPU.v**         - Implementation on FIFO on TPU.
+- **systolicArray.v**    - Systolic Array is matrix multiplication block made up of MACUnits.
+- **MACUnit.v**          - Basic matrix multiplication unit
+- **QuantizationUnit.v** - This unit converts 24-bits values to 8-bits values
+- **ActivationUnit.v**   - This unit passes the values that are greater than threshold value orelse 0 is passed 
 
 ## Let's get Started -
 
@@ -49,7 +54,7 @@ The input values gets loaded into feature memory and weight memory. <br/>
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/MAC.png)
 The 8-bit values are loaded into column-wise asynchronous FIFOs from the weight memory and feature memory, as the memory clock domain differs from the systolic array clock domain. FIFOs are responsible for loading data into the systolic array.
 
-As the values are multiplied within the MAC units, they are then passed down to other MAC units. After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values. Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.
+As the values are multiplied within the MAC units, they are then passed down to other MAC units. The Carryin values are 24-bit. After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values. Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.
 
 Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.
 <br/>
