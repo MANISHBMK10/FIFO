@@ -1,10 +1,10 @@
 # FIFO on TPU
  Asynchronous FIFO implementation on TPU
- # Simulation Tool
+ ## Simulation Tool
  To Simulate the following files, I've used Icarus Verilog and GtkWave.<br/>
  Here's the link for Installation - [Icarus Verilog](https://bleyer.org/icarus/) <br/>
  After installation, please save the files in the bin and use the commands below. 
-# Commands
+## Commands
 To run FIFO implementation on TPU, use the following command - <br />
 
 1st Command - iverilog -o b.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br />
@@ -34,17 +34,17 @@ To test Asynchronous FIFO files, use the command below - <br />
 - **QuantizationUnit.v** - This unit converts 24-bits values to 8-bits values
 - **ActivationUnit.v**   - This unit passes the values that are greater than threshold value orelse 0 is passed 
 
-## Let's get Started -
+### Let's get Started -
 
-### FIFO -
+#### FIFO -
  FIFO stands for First_in, First_out Buffer. There are two types of FIFO's. 
  Synchronous FIFO - This FIFO works in one clock domain.
  Asynchronous FIFO - This FIFO works with two seperate clock domains.
  In this Project, I'd gone with Asynchronous FIFO as it's common in real world.
-### What is a TPU? -
+#### What is a TPU? -
 
 TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
-### Image of TPU-
+#### Image of TPU-
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU_C.png)
 **Multiply and Accumulate(MAC)** units are the base of systolic array. I've implemented 16 MAC units to form a systolic array i.e 4*4 matrices mutliplication.<br/> 
@@ -58,8 +58,8 @@ As the values are multiplied within the MAC units, they are then passed down to 
 
 Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.
 <br/>
-# Simulation Results
-## Asynchronous FIFO Testbench results -<br/>
+## Simulation Results
+### Asynchronous FIFO Testbench results -<br/>
 
 To test the working of FIFO, I've used two memories with different clock domains and values are passed down from one memory to other using FIFO.
 
@@ -68,21 +68,21 @@ C:\iverilog\bin>iverilog -o a test_memfifo_tb.v test_memfifo.v wfull.v rempty.v 
 C:\iverilog\bin>vvp a<br/>
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/verilog.png)
-### GTKWave Results -
+#### GTKWave Results -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/gtk_fifofinal.png)
 
-## FIFO Implementation on TPU Results
+### FIFO Implementation on TPU Results
 **Simulation command #1** - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br/>
 
 **command #2** - vvp result.out<br/>
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/fifo_tpu.png)
 
-### GTKWave Results -
+#### GTKWave Results -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/tpu_gtk.png)
 
-# References
+## References
 
 [http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](url)
