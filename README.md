@@ -54,9 +54,11 @@ The input values gets loaded into feature memory and weight memory. <br/>
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/MAC.png)
 The 8-bit values are loaded into column-wise asynchronous FIFOs from the weight memory and feature memory, as the memory clock domain differs from the systolic array clock domain. FIFOs are responsible for loading data into the systolic array.
 
-As the values are loaded and multiplied within the MAC units, they are then passed down to other MAC units. The Carryin values are 24-bits for Top MACUnits. <br/>
+As the values are loaded and multiplied within the MAC units, they are then passed down to other MAC units. The Carryin values are 24-bits for top MACUnits. <br/>
+
 After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values. <br/>
 Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.<br/>
+
 Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.<br/>
 
 ## Simulation Results
