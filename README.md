@@ -56,7 +56,7 @@ The 8-bit values are loaded into column-wise asynchronous FIFOs from the weight 
 
 As the values are loaded and multiplied within the MAC units, they are then passed down to other MAC units. The Carryin values are 24-bits for top MACUnits. <br/>
 
-After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values.Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.<br/>
+After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values. Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.<br/>
 
 Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.<br/>
 
