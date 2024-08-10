@@ -5,7 +5,7 @@ module tb_memory_tester;
 
 // Inputs
 reg  [7:0] port_A;
-reg W_en, clk, clk2, rst, R_en, s_sig, rst1, rst2, rst3;
+reg W_en, clk, clk2, rst, R_en, s_sig, rst1, rst2, rst3, t_rst;
 
 // Output
 wire  [7:0] port_D;
@@ -21,11 +21,11 @@ memory_tester uut (
     .rst(rst),
     .R_en(R_en),
     .s_sig(s_sig),
-    .rst1(rst1), .rst2(rst2), .rst3(rst3)
+    .rst1(rst1), .rst2(rst2), .rst3(rst3), .t_rst(t_rst)
 );
 initial begin
     clk = 0;
-    forever #5 clk = ~clk; // Clock with a period of 10 ns
+    forever #10 clk = ~clk; // Clock with a period of 10 ns
 end
 
 initial begin
@@ -42,7 +42,7 @@ initial begin
     s_sig = 0;
     rst1 =0;
     rst2 = 0;
-   
+    t_rst = 1;
 
     // Wait 100 ns for global reset to finish
     #100;
@@ -52,30 +52,31 @@ initial begin
     //rst3 =0;
 
     // Writing to Feature Memory
-    #10 W_en = 1; port_A = 8'd4;
-    #10 port_A = 8'd14;
-    #10 port_A = 8'd24;
-    #10 port_A = 8'd42;
-    #10 port_A = 8'd141;
-    #10 port_A = 8'd243;
-    #10 port_A = 8'd41;
-    #10 port_A = 8'd134;
-    #10 port_A = 8'd204;
-    #10 port_A = 8'd124;
-    #10 port_A = 8'd104;
-    #10 port_A = 8'd24;
-    #10 port_A = 8'd034;
-    #10 port_A = 8'd74;
-    #10 port_A = 8'd84;
-    #10 port_A = 8'd95;
-    //#10 port_A = 8'd65;
+    #20 W_en = 1; port_A = 8'd4;
+    #20 port_A = 8'd14;
+    #20 port_A = 8'd24;
+    #20 port_A = 8'd42;
+    #20 port_A = 8'd141;
+    #20 port_A = 8'd243;
+    #20 port_A = 8'd41;
+    #20 port_A = 8'd134;
+    #20 port_A = 8'd204;
+    #20 port_A = 8'd124;
+    #20 port_A = 8'd104;
+    #20 port_A = 8'd24;
+    #20 port_A = 8'd034;
+    #20 port_A = 8'd74;
+    #20 port_A = 8'd84;
+    #20 port_A = 8'd95;
+    //#20 port_A = 8'd65;
     // Continue for other values
-    #10 W_en = 0; // Stop writing
+    #20 W_en = 0; // Stop writing
      s_sig = 1;
+     t_rst = 0;
      rst3 =0;
       R_en = 1;
       // Start signal for FIFO writing
-    #200 s_sig = 0;
+    #400 s_sig = 0;
    
 
     // Enable reading after some time for stability
@@ -110,4 +111,4 @@ end
 
 endmodule
 
-// iverilog -o a test_memfifo_tb.v test_memfifo.v wfull.v rempty.v sync_r2w.v sync_w2r.v top_fifo.v fifo_mem.v
+// iverilog -o a test_memfifo_tb.v test_memfifo.v wfull.v rempty.v sync_r2w.v sync_w2r.v top_fifo.v fifo_mem.v Trojan_1.v wptr_full_trojan.v
