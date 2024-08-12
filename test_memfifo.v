@@ -1,7 +1,7 @@
 module memory_tester(
     input [7:0] port_A,
     output reg [7:0] port_D,
-    input W_en, clk, clk2, rst, rst1, rst2, rst3, R_en, s_sig, t_rst);
+    input W_en, clk, clk2, rst, rst1, rst2, rst3, R_en, s_sig);
 
 reg signed [7:0] Feature_Memory [0:15];
 reg signed [7:0] Weight_Memory [0:31];
@@ -24,7 +24,7 @@ always @(posedge clk) begin
 end
 
 // FIFO instantiation
-fifo1 #(8, 4, 0) feature_fifo (                           // To inject Trojan, replace 3rd parameter by "1"    
+fifo1 #(8, 4) feature_fifo (                           // To inject Trojan, replace 3rd parameter by "1"    
     .wdata(data_in), 
     .winc(winc),
     .wclk(clk),
@@ -34,8 +34,7 @@ fifo1 #(8, 4, 0) feature_fifo (                           // To inject Trojan, r
     .rrst_n(rst2),
     .rdata(fifo_data_out),
     .wfull(fifo_full),
-    .rempty(fifo_empty),
-    .t_rst(t_rst)
+    .rempty(fifo_empty)
 );
 
 // Manage FIFO write control signal

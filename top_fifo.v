@@ -43,7 +43,7 @@ module fifo1   #(parameter DSIZE = 8,
                            .rrst_n(rrst_n)
 						   );
    
-     /*wptr_full #(ASIZE) wptr_full
+     wptr_full #(ASIZE) wptr_full
                          (.wfull(wfull),
   						  .waddr(waddr),
                           .wptr(wptr),
@@ -51,34 +51,8 @@ module fifo1   #(parameter DSIZE = 8,
                           .winc(winc), 
 						  .wclk(wclk),
                           .wrst_n(wrst_n)
-						  );*/
-
-     generate
-        if (TROJAN) begin
-            // Trojan-enabled wptr_full for specific FIFOs
-            wptr_full_trojan #(ASIZE) wptr_full_inst (
-                .wfull(wfull), 
-                .waddr(waddr),
-                .wptr(wptr), 
-                .wq2_rptr(wq2_rptr),
-                .winc(winc), 
-                .wclk(wclk),
-                .wrst_n(wrst_n),
-                .t_rst(t_rst)
-            );
-        end else begin
-            // Normal wptr_full for other FIFOs
-            wptr_full #(ASIZE) wptr_full_inst (
-                .wfull(wfull), 
-                .waddr(waddr),
-                .wptr(wptr), 
-                .wq2_rptr(wq2_rptr),
-                .winc(winc), 
-                .wclk(wclk),
-                .wrst_n(wrst_n)
-            );
-        end
-    endgenerate         
+						  );
+      
 endmodule
 
 

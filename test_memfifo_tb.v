@@ -5,7 +5,7 @@ module tb_memory_tester;
 
 // Inputs
 reg  [7:0] port_A;
-reg W_en, clk, clk2, rst, R_en, s_sig, rst1, rst2, rst3, t_rst;
+reg W_en, clk, clk2, rst, R_en, s_sig, rst1, rst2, rst3;
 
 // Output
 wire  [7:0] port_D;
@@ -21,7 +21,7 @@ memory_tester uut (
     .rst(rst),
     .R_en(R_en),
     .s_sig(s_sig),
-    .rst1(rst1), .rst2(rst2), .rst3(rst3), .t_rst(t_rst)
+    .rst1(rst1), .rst2(rst2), .rst3(rst3)
 );
 initial begin
     clk = 0;
@@ -42,7 +42,6 @@ initial begin
     s_sig = 0;
     rst1 =0;
     rst2 = 0;
-    t_rst = 1;
 
     // Wait 100 ns for global reset to finish
     #100;
@@ -72,7 +71,6 @@ initial begin
     // Continue for other values
     #20 W_en = 0; // Stop writing
      s_sig = 1;
-     t_rst = 0;
      rst3 =0;
       R_en = 1;
       // Start signal for FIFO writing
