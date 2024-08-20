@@ -1,8 +1,8 @@
 # FIFO on TPU
  Asynchronous FIFO implementation on toy version of TPU.
  ## Simulation Tool
- To Simulate the following files, I've used Icarus Verilog and GtkWave.<br/>
- Here's the link for Installation - [Icarus Verilog](https://bleyer.org/icarus/) <br/>
+ To simulate the following files, I've used Icarus Verilog and GtkWave.<br/>
+ Here's the link for installation - [Icarus Verilog](https://bleyer.org/icarus/) <br/>
  After installation, please save the files in the bin and use the commands below. 
 ## Commands
 To run FIFO implementation on TPU, use the following command - <br />
@@ -32,7 +32,7 @@ To test Asynchronous FIFO files, use the command below - <br />
 - **systolicArray.v**    - Systolic Array is matrix multiplication block made up of MACUnits.
 - **MACUnit.v**          - Basic matrix multiplication unit
 - **QuantizationUnit.v** - This unit converts 24-bits values to 8-bits values
-- **ActivationUnit.v**   - This unit passes the values that are greater than threshold value orelse 0 is passed 
+- **ActivationUnit.v**   - This unit passes the values that are greater than threshold value or else 0 is passed 
 
 ### Let's get Started -
 
@@ -43,18 +43,18 @@ To test Asynchronous FIFO files, use the command below - <br />
  In this Project, I have implemented Asynchronous FIFO as it is commonly used in real world.<br/>
 #### What is a TPU? -
 
-TPU stands for "Tensor Processing Unit" and Systolic Array is heart of TPU. 
+TPU stands for "Tensor Processing Unit" and systolic array is heart of TPU. 
 #### Image of TPU-
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/ASYNC_FIFO_TPU_C.png)
-**Multiply and Accumulate(MAC)** units are the base of systolic array. I've implemented 16 MAC units to form a systolic array for 4*4 matrix mutliplication.<br/> 
+**Multiply and Accumulate (MAC)** units are the base of systolic array. I've implemented 16 MAC units to form a systolic array for 4*4 matrix mutliplication.<br/> 
 The input values gets loaded into feature memory and weight memory. <br/>
 #### Image of MAC -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/MAC.png)
 The 8-bit values are loaded into column-wise asynchronous FIFOs from the weight memory and feature memory, as the memory clock domain differs from the systolic array clock domain. FIFOs are responsible for loading data into the systolic array.
 
-As the values are loaded and multiplied within the MAC units, they are then passed down to other MAC units. The Carryin values are 24-bits for top MACUnits. <br/>
+As the values are loaded and multiplied within the MAC units, they are then passed down to other MAC units. The Carry-in values are 24-bits for top MAC units. <br/>
 
 After the multiplication process, the values undergo quantization, converting 24-bit values to 8-bit values. Following quantization, the values pass through an activation unit, where the output value is checked against a threshold.<br/>
 
@@ -73,7 +73,7 @@ C:\iverilog\bin>vvp a<br/>
 #### GTKWave Results -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/gtk_fifofinal.png)
-> The values are in Hexadecimal data format.<br/>
+> The values are in hexadecimal data format.<br/>
 
 ### FIFO Implementation on TPU Results
 **Simulation command #1** - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br/>
@@ -85,7 +85,7 @@ C:\iverilog\bin>vvp a<br/>
 #### GTKWave Results -
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/tpu_gtk.png)
-> The values are in Hexadecimal data format.<br/>
+> The values are in hexadecimal data format.<br/>
 ## References
 
 [http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](url)
