@@ -37,9 +37,10 @@ To test Asynchronous FIFO files, use the command below - <br />
 ### Let's get Started -
 
 #### FIFO -
- FIFO stands for First_in, First_out Buffer. There are two types of FIFO's. <br/>
- Synchronous FIFO - This FIFO works in one clock domain.<br/>
- Asynchronous FIFO - This FIFO works with two seperate clock domains.<br/>
+ FIFO stands for First_in, First_out Buffer. <br/>
+ There are two types of FIFO's. <br/>
+ - Synchronous FIFO - This FIFO works in one clock domain.<br/>
+ - Asynchronous FIFO - This FIFO works with two seperate clock domains.<br/>
  In this Project, I have implemented Asynchronous FIFO as it is commonly used in real world.<br/>
 #### What is a TPU? -
 
