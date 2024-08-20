@@ -42,8 +42,7 @@ To test Asynchronous FIFO files, use the command below - <br />
  There are two types of FIFO's. <br/>
  - Synchronous FIFO - This FIFO works in one clock domain.<br/>
  - Asynchronous FIFO - This FIFO works with two seperate clock domains.<br/>
-   <br/>
-In this Project, I have implemented Asynchronous FIFO as it is commonly used in real world.<br/>
+   <br/>In this Project, I have implemented Asynchronous FIFO as it is commonly used in real world.<br/>
 #### What is a TPU? -
 
 TPU stands for "Tensor Processing Unit" and systolic array is heart of TPU. 
