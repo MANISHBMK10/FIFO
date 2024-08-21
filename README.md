@@ -1,6 +1,6 @@
 # FIFO(First in, first out) implementation on TPU(Tensor Processing Unit)
  Asynchronous FIFO implementation on toy version of TPU.
- ## Simulation Tool
+ ## Simulation tool
  To simulate the following files, I've used icarus verilog and gtkwave.<br/>
  Here's the link for installation - [Icarus Verilog](https://bleyer.org/icarus/) <br/>
  After installation, please save the files in the bin and use the commands below. 
