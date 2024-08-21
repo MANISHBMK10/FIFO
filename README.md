@@ -62,7 +62,7 @@ After the multiplication process, the values undergo quantization, converting 24
 
 Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.<br/>
 
-## Simulation Results
+## Simulation results
 ### Asynchronous FIFO testbench results -<br/>
 
 To test the working of FIFO, I've used two memories with different clock domains and values are passed down from one memory to other using FIFO.
