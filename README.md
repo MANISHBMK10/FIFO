@@ -33,6 +33,7 @@ To test asynchronous FIFO files, use the command below - <br />
 - **MACUnit.v**          - Basic matrix multiplication unit
 - **QuantizationUnit.v** - This unit converts 24-bits values to 8-bits values
 - **ActivationUnit.v**   - This unit passes the values that are greater than threshold value or else 0 is passed 
+## Understanding FIFO in TPU Design
 #### FIFO -
  FIFO stands for First in, first out Buffer. <br/>
  <br/>
