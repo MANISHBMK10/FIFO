@@ -48,7 +48,7 @@ In this Project, I have implemented asynchronous FIFO as it is commonly used in 
 TPU stands for "Tensor Processing Unit" and systolic array is heart of TPU. 
 #### Image of TPU-
 
-![](https://github.com/MANISHBMK10/FIFO/blob/main/tpu.png)
+![](https://github.com/MANISHBMK10/FIFO/blob/main/tpu_1.png)
 **Multiply and Accumulate (MAC)** units are the base of systolic array. I've implemented 16 MAC units to form a systolic array for 4*4 matrix mutliplication.<br/> 
 The input values gets loaded into feature memory and weight memory. <br/>
 #### Image of MAC -
