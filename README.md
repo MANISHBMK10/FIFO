@@ -64,6 +64,7 @@ Finally, the values are updated in asynchronous FIFOs and written back into the 
 
 ## **Manupulating read and write pointers of FIFO** 
 **Modules** - FIFO_TPU_t.v top_fifo_t.v wptr_full_trojan.v rempty_t.v <br/>
+
 **wptr_full_trojan.v** - This module manupilates write pointer<br/>
 **rempty_t.v** - It manupilates read pointer<br/>
 **top_fifo_t.v** - Instantiates the above modules.<br/>
