@@ -62,12 +62,16 @@ After the multiplication process, the values undergo quantization, converting 24
 
 Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.<br/>
 
-## **Manupulating read and write pointers of FIFO** 
+## **Manipulating read and write pointers of FIFO** 
 **Modules** - FIFO_TPU_t.v top_fifo_t.v wptr_full_trojan.v rempty_t.v <br/>
 
 **wptr_full_trojan.v** - This module manupilates write pointer<br/>
 **rempty_t.v** - It manupilates read pointer<br/>
 **top_fifo_t.v** - Instantiates the above modules.<br/>
+
+#### Read/write pointers: manipulation and control
+I've implemented the pointers in such a way that the data can be read from desired location.<br/>
+The main aim was to attack read pointers but I've implementated on both pointers.
 
 ## Simulation results
 ### Asynchronous FIFO testbench results -<br/>
@@ -99,7 +103,7 @@ C:\iverilog\bin>vvp a<br/>
 ### Read and write pointers manipulation results
 **Simulation command #1** - iverilog -o result2.out FIFO_TPU_TB.v FIFO_TPU_t.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v top_fifo_t.v wptr_full_trojan.v rempty_t.v <br/>
 
-**command #2** - vvp result2.out<br/>
+**Command #2** - vvp result2.out<br/>
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1.png)
 #### Gtkwave results -
