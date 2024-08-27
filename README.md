@@ -62,7 +62,7 @@ After the multiplication process, the values undergo quantization, converting 24
 
 Finally, the values are updated in asynchronous FIFOs and written back into the feature memory.<br/>
 
-## **Manupulation read and write pointers of FIFO** 
+## **Manupulating read and write pointers of FIFO** 
 **Modules** - FIFO_TPU_t.v top_fifo_t.v wptr_full_trojan.v rempty_t.v <br/>
 **wptr_full_trojan.v** - This module manupilates write pointer<br/>
 **rempty_t.v** - It manupilates read pointer<br/>
