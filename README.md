@@ -71,8 +71,7 @@ Finally, the values are updated in asynchronous FIFOs and written back into the 
 
 #### Read/write pointers: manipulation and control
 I've implemented the pointers in such a way that the data can be read from desired location.<br/>
-The main aim was to attack read pointers but I've implementated on both pointers.
-
+The main aim was to attack read pointers but I've implementated on both pointers.]Only one of the pointer can be manipulated at the same time.<br/>
 ## Simulation results
 ### Asynchronous FIFO testbench results -<br/>
 
