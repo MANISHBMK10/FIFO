@@ -69,6 +69,12 @@ Finally, the values are updated in asynchronous FIFOs and written back into the 
 **rempty_t.v** - It manupilates read pointer<br/>
 **top_fifo_t.v** - Instantiates the above modules.<br/>
 
+## **Trojan I** 
+**Modules** - top_fifo_trojan1.v wptr_full_trojan_1.v<br/>
+
+**wptr_full_trojan_1.v** - This module manupilates write pointer.<br/>
+**top_fifo_trojan1.v** - Instantiates the above module.<br/>
+
 #### Read/write pointers: manipulation and control
 I've implemented the pointers in such a way that the data can be read from desired location.<br/>
 The main aim was to attack read pointers but I've implementated on both pointers. Only one of the pointer can be manipulated at the same time.<br/>
@@ -86,6 +92,18 @@ C:\iverilog\bin>vvp a<br/>
 
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/gtk_fifofinal.png)
 > The values are in hexadecimal data format.<br/>
+
+### Trojan I testbench results-<br/>
+
+C:\iverilog\bin>iverilog -o a test_memfifo_tb.v test_memfifo.v wptr_full_trojan_1.v rempty.v sync_r2w.v sync_w2r.v top_fifo_trojan1.v fifo_mem.v<br/>
+
+C:\iverilog\bin>vvp a<br/>
+![https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1imp.png]()
+#### Gtkwave results -
+
+![https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1imp2.png]()
+
+
 
 ### FIFO implementation on TPU results
 **Simulation command #1** - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br/>
@@ -112,3 +130,4 @@ C:\iverilog\bin>vvp a<br/>
 ## References
 
 [http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](url)
+[https://ieeexplore.ieee.org/document/7282151](url)
