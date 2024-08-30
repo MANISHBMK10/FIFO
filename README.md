@@ -69,15 +69,19 @@ Finally, the values are updated in asynchronous FIFOs and written back into the 
 **rempty_t.v** - It manupilates read pointer<br/>
 **top_fifo_t.v** - Instantiates the above modules.<br/>
 
+#### Read/write pointers: manipulation and control
+I've implemented the pointers in such a way that the data can be read from desired location.<br/>
+The main aim was to attack read pointers but I've implementated on both pointers. Only one of the pointer can be manipulated at the same time.<br/>
+
 ## **Trojan I** 
 **Modules** - top_fifo_trojan1.v wptr_full_trojan_1.v<br/>
 
 **wptr_full_trojan_1.v** - This module manupilates write pointer.<br/>
 **top_fifo_trojan1.v** - Instantiates the above module.<br/>
 
-#### Read/write pointers: manipulation and control
-I've implemented the pointers in such a way that the data can be read from desired location.<br/>
-The main aim was to attack read pointers but I've implementated on both pointers. Only one of the pointer can be manipulated at the same time.<br/>
+**Trojan I** - This trojan manipulates write pointer and reloactes behind read pointer.
+![](https://github.com/MANISHBMK10/FIFO/blob/main/trojanIimage.png)
+
 ## Simulation results
 ### Asynchronous FIFO testbench results -<br/>
 
