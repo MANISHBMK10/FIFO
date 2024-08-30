@@ -124,10 +124,10 @@ C:\iverilog\bin>vvp a<br/>
 
 **Command #2** - vvp result2.out<br/>
 
-![](https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1.png)
+![](https://github.com/MANISHBMK10/FIFO/blob/main/mp_results.png)
 #### Gtkwave results -
 
-![](https://github.com/MANISHBMK10/FIFO/blob/main/trojan_2.png)
+![](https://github.com/MANISHBMK10/FIFO/blob/main/mp_results2.png)
 
 ## References
 
