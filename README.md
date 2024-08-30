@@ -102,12 +102,10 @@ C:\iverilog\bin>vvp a<br/>
 C:\iverilog\bin>iverilog -o a test_memfifo_tb.v test_memfifo.v wptr_full_trojan_1.v rempty.v sync_r2w.v sync_w2r.v top_fifo_trojan1.v fifo_mem.v<br/>
 
 C:\iverilog\bin>vvp a<br/>
-![https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1imp.png]()
+![](https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1imp.png)
 #### Gtkwave results -
 
-![https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1imp2.png]()
-
-
+![](https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1imp2.png)
 
 ### FIFO implementation on TPU results
 **Simulation command #1** - iverilog -o result.out FIFO_TPU_TB.v FIFO_TPU.v systolicArray.v MACUnit.v QuantizationUnit.v ActivationUnit.v top_fifo.v sync_r2w.v sync_w2r.v rempty.v fifo_mem.v wfull.v<br/>
