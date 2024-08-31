@@ -99,9 +99,9 @@ C:\iverilog\bin>vvp a<br/>
 
 ### Trojan I testbench results-<br/>
 
-C:\iverilog\bin>iverilog -o a test_memfifo_tb.v test_memfifo.v wptr_full_trojan_1.v rempty.v sync_r2w.v sync_w2r.v top_fifo_trojan1.v fifo_mem.v<br/>
+**Simulation command #1** - C:\iverilog\bin>iverilog -o a test_memfifo_tb.v test_memfifo.v wptr_full_trojan_1.v rempty.v sync_r2w.v sync_w2r.v top_fifo_trojan1.v fifo_mem.v<br/>
 
-C:\iverilog\bin>vvp a<br/>
+**Command #2** - C:\iverilog\bin>vvp a<br/>
 ![](https://github.com/MANISHBMK10/FIFO/blob/main/trojan_1imp.png)
 #### Gtkwave results -
 
