@@ -131,5 +131,5 @@ C:\iverilog\bin>vvp a<br/>
 
 ## References
 
-[http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf)
+[http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf](http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf)<br/>
 [https://ieeexplore.ieee.org/document/7282151](https://ieeexplore.ieee.org/document/7282151)
